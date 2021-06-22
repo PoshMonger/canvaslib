@@ -1,0 +1,35 @@
+{
+  "name": "canvaslib",
+  "scripts": {
+    "build": "webpack",
+    "lint": "eslint src/*"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "eslint": "^2.13.1",
+    "webpack": "^1.15.0"
+  },
+  "dependencies": {
+    "dependencies": "0.0.1",
+    "lodash": "^4.17.21",
+    "scripts": "^0.1.0"
+  },
+  "description": "Snake written in both ES5 and ES6. [Play it!](http://peterolson.github.io/es6_snake/ES6Snake.html)",
+  "version": "1.0.0",
+  "main": "bundle.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peterolson/es6_snake.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peterolson/es6_snake/issues"
+  },
+  "homepage": "https://github.com/peterolson/es6_snake#readme"
+}
