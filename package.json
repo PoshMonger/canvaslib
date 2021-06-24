@@ -18,18 +18,4 @@
     "dependencies": "0.0.1",
     "lodash": "^4.17.21",
     "scripts": "^0.1.0"
-  },
-  "description": "Snake written in both ES5 and ES6. [Play it!](http://peterolson.github.io/es6_snake/ES6Snake.html)",
-  "version": "1.0.0",
-  "main": "bundle.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/peterolson/es6_snake.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/peterolson/es6_snake/issues"
-  },
-  "homepage": "https://github.com/peterolson/es6_snake#readme"
-}
+  }}

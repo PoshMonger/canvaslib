@@ -10,8 +10,15 @@
 </head>
 
 <body>
-  <h1>Use WASD to cruise around</h1>
-    <canvas id="canvas" height="500" width="500"></canvas>
+  <h1>Use WASD to cruise around</h1><canvas id="bg" width="640" height="480" style="position: absolute; z-index: 0">
+</canvas>
+<canvas id="fg" width="640" height="480" style="position: absolute; z-index: 1">
+</canvas>
+<canvas id="fg1" width="640" height="480" style="position: absolute; z-index: -1">
+</canvas>
+   
+    </canvas>
+  
     <script src="bundle.js"></script>
 </body>
 </html>
