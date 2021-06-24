@@ -1,11 +1,11 @@
 
 
 
-import {player1,player2,player3, shootdown, shootleft, shootright, shootup} from './player'
+import {player1, shootdown, shootleft, shootright, shootup} from './player'
 
 
 
-class particle{
+class Supersaiyan{
     constructor(player1xcord,player1ycord,dx,dy,radius,color){
     this.x =player1xcord;
     this.y=player1ycord;
@@ -16,22 +16,23 @@ class particle{
 
     
     draw(){  
-      var canvas = document.getElementById('fg1');
-      var ctx2 = canvas.getContext('2d');
+      let canvas3 = document.getElementById('bg');
+      let ctx3 = canvas3.getContext('2d');
     
-      ctx2.fillStyle = 'rgba(255,255,255, .2)'
-      ctx2.fillRect(0,0, canvas.width, canvas.height);
+      
+      ctx3.fillStyle = 'rgba(255,255,255, .2)'
+      ctx3.fillRect(0,0, canvas3.width, canvas3.height);
         
-             ctx2.fillStyle = this.color;
-            ctx2.beginPath();
-            ctx2.arc(this.x,this.y,this.radius, 0, Math.PI * 2, false);
-            ctx2.closePath();
-            ctx2.fill();}
+             ctx3.fillStyle = this.color;
+            ctx3.beginPath();
+            ctx3.arc(this.x,this.y,this.radius, 0, Math.PI * 2, false);
+            ctx3.closePath();
+            ctx3.fill();}
 
      
     
     update(){  
-      var canvas = document.getElementById('fg1');
+      let canvas3 = document.getElementById('bg');
     
     
        
@@ -40,20 +41,16 @@ class particle{
         this.dx = this.dx *.99;
         this.dy = this.dy * .99;
 
-        if (this.y > canvas.height|| this.y < 0){
+        if (this.y > canvas3.height|| this.y < 0){
 
             this.dy = -this.dy
           
           }
-          if(this.x > canvas.width || this.x  < 0){
+          if(this.x > canvas3.width || this.x  < 0){
           
             this.dx = -this.dx
           
           
-          
-
-
-
         }
     }
 }
@@ -95,24 +92,27 @@ window.addEventListener("keydown", moveSomething, false);
 
                
                 break;
-               
-
          
                 case 32:
                   
 
-            function animatefg(){
-    
-                let myparticle = new particle(player1.x,player1.y,50,10,15,'red');
-                    
+            function animatefg1(){
+            
+                let myparticle = new Supersaiyan(player1.x,player1.y,player1.dx,player1.dy,15,'red');
+               
                 myparticle.draw();
                 myparticle.update();
              
+              
+                
 
-                requestAnimationFrame(animatefg)
+              
+
+               requestAnimationFrame(animatefg1)}
+               
             
-            }
-            animatefg()
+            
+            animatefg1();
             
         
         break;
@@ -123,6 +123,7 @@ window.addEventListener("keydown", moveSomething, false);
            shootleft.dx = -5;
            shootleft.dy =0;
            shootleft.radius = 5;
+           shootleft.color ='red'
 
 						break;
         case 38:
@@ -132,6 +133,7 @@ window.addEventListener("keydown", moveSomething, false);
             shootdown.dx = 0;
             shootdown.dy =-5;
             shootdown.radius = 5;
+            shootdown.color ='red'
 					break;
         case 39:
             shootright.x=player1.x
@@ -139,6 +141,7 @@ window.addEventListener("keydown", moveSomething, false);
            shootright.dx = 5;
            shootright.dy =0;
            shootright.radius = 5;
+           shootright.color ='red'
 						break;
         case 40:
             shootup.x=player1.x
@@ -146,6 +149,7 @@ window.addEventListener("keydown", moveSomething, false);
             shootup.dx = 0;
             shootup.dy =5;
             shootup.radius = 5;
+            shootup.color ='red'
 					break;
     
     }}
@@ -153,4 +157,4 @@ window.addEventListener("keydown", moveSomething, false);
 }
    
 
-   export {getcords,player1,player2,player3}
+   export {player1,getcords}

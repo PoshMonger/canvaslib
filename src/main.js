@@ -1,9 +1,10 @@
 
-import {getcords,player1,player2,} from './controls';
+import {getcords,player1,} from './controls';
 import { shootdown, shootup, shootleft,shootright} from './player';
 
     
 getcords();
+
 function animate(){
     
    
@@ -16,6 +17,11 @@ function animate(){
 animate();
 
 function animatefg(){
+    let canvas2 = document.getElementById('fg1');
+    let ctx2 = canvas2.getContext('2d');
+    ctx2.clearRect(0,0,canvas2.width,canvas2.height)
+
+
     shootdown.draw();
     shootdown.update();
     shootup.draw();
@@ -24,6 +30,10 @@ function animatefg(){
     shootleft.update();
     shootright.draw();
     shootright.update();
+    
+
+    
+   
     requestAnimationFrame(animatefg)
 
 }

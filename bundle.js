@@ -51,6 +51,7 @@
 	var _player = __webpack_require__(23);
 	
 	(0, _controls.getcords)();
+	
 	function animate() {
 	
 	    _controls.player1.update();
@@ -61,6 +62,10 @@
 	animate();
 	
 	function animatefg() {
+	    var canvas2 = document.getElementById('fg1');
+	    var ctx2 = canvas2.getContext('2d');
+	    ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+	
 	    _player.shootdown.draw();
 	    _player.shootdown.update();
 	    _player.shootup.draw();
@@ -69,6 +74,7 @@
 	    _player.shootleft.update();
 	    _player.shootright.draw();
 	    _player.shootright.update();
+	
 	    requestAnimationFrame(animatefg);
 	}
 	animatefg();
@@ -82,7 +88,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.player3 = exports.player2 = exports.player1 = exports.getcords = undefined;
+	exports.getcords = exports.player1 = undefined;
 	
 	var _classCallCheck2 = __webpack_require__(2);
 	
@@ -96,9 +102,9 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var particle = function () {
-	    function particle(player1xcord, player1ycord, dx, dy, radius, color) {
-	        (0, _classCallCheck3.default)(this, particle);
+	var Supersaiyan = function () {
+	    function Supersaiyan(player1xcord, player1ycord, dx, dy, radius, color) {
+	        (0, _classCallCheck3.default)(this, Supersaiyan);
 	
 	        this.x = player1xcord;
 	        this.y = player1ycord;
@@ -108,42 +114,42 @@
 	        this.color = color;
 	    }
 	
-	    (0, _createClass3.default)(particle, [{
+	    (0, _createClass3.default)(Supersaiyan, [{
 	        key: 'draw',
 	        value: function draw() {
-	            var canvas = document.getElementById('fg1');
-	            var ctx2 = canvas.getContext('2d');
+	            var canvas3 = document.getElementById('bg');
+	            var ctx3 = canvas3.getContext('2d');
 	
-	            ctx2.fillStyle = 'rgba(255,255,255, .2)';
-	            ctx2.fillRect(0, 0, canvas.width, canvas.height);
+	            ctx3.fillStyle = 'rgba(255,255,255, .2)';
+	            ctx3.fillRect(0, 0, canvas3.width, canvas3.height);
 	
-	            ctx2.fillStyle = this.color;
-	            ctx2.beginPath();
-	            ctx2.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-	            ctx2.closePath();
-	            ctx2.fill();
+	            ctx3.fillStyle = this.color;
+	            ctx3.beginPath();
+	            ctx3.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+	            ctx3.closePath();
+	            ctx3.fill();
 	        }
 	    }, {
 	        key: 'update',
 	        value: function update() {
-	            var canvas = document.getElementById('fg1');
+	            var canvas3 = document.getElementById('bg');
 	
 	            this.x += this.dx;
 	            this.y += this.dy;
 	            this.dx = this.dx * .99;
 	            this.dy = this.dy * .99;
 	
-	            if (this.y > canvas.height || this.y < 0) {
+	            if (this.y > canvas3.height || this.y < 0) {
 	
 	                this.dy = -this.dy;
 	            }
-	            if (this.x > canvas.width || this.x < 0) {
+	            if (this.x > canvas3.width || this.x < 0) {
 	
 	                this.dx = -this.dx;
 	            }
 	        }
 	    }]);
-	    return particle;
+	    return Supersaiyan;
 	}();
 	
 	function getcords() {
@@ -188,17 +194,17 @@
 	                break;
 	
 	            case 32:
-	                var animatefg = function animatefg() {
+	                var animatefg1 = function animatefg1() {
 	
-	                    var myparticle = new particle(_player.player1.x, _player.player1.y, 50, 10, 15, 'red');
+	                    var myparticle = new Supersaiyan(_player.player1.x, _player.player1.y, _player.player1.dx, _player.player1.dy, 15, 'red');
 	
 	                    myparticle.draw();
 	                    myparticle.update();
 	
-	                    requestAnimationFrame(animatefg);
+	                    requestAnimationFrame(animatefg1);
 	                };
 	
-	                animatefg();
+	                animatefg1();
 	
 	                break;
 	            case 37:
@@ -208,6 +214,7 @@
 	                _player.shootleft.dx = -5;
 	                _player.shootleft.dy = 0;
 	                _player.shootleft.radius = 5;
+	                _player.shootleft.color = 'red';
 	
 	                break;
 	            case 38:
@@ -217,6 +224,7 @@
 	                _player.shootdown.dx = 0;
 	                _player.shootdown.dy = -5;
 	                _player.shootdown.radius = 5;
+	                _player.shootdown.color = 'red';
 	                break;
 	            case 39:
 	                _player.shootright.x = _player.player1.x;
@@ -224,6 +232,7 @@
 	                _player.shootright.dx = 5;
 	                _player.shootright.dy = 0;
 	                _player.shootright.radius = 5;
+	                _player.shootright.color = 'red';
 	                break;
 	            case 40:
 	                _player.shootup.x = _player.player1.x;
@@ -231,16 +240,15 @@
 	                _player.shootup.dx = 0;
 	                _player.shootup.dy = 5;
 	                _player.shootup.radius = 5;
+	                _player.shootup.color = 'red';
 	                break;
 	
 	        }
 	    }
 	}
 	
-	exports.getcords = getcords;
 	exports.player1 = _player.player1;
-	exports.player2 = _player.player2;
-	exports.player3 = _player.player3;
+	exports.getcords = getcords;
 
 /***/ }),
 /* 2 */
@@ -601,10 +609,10 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var player1 = new _shape.LittleRed(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor);
-	var shootup = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor);
-	var shootdown = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor);
-	var shootleft = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor);
-	var shootright = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor);
+	var shootup = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor3);
+	var shootdown = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor3);
+	var shootleft = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor3);
+	var shootright = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor3);
 	
 	exports.player1 = player1;
 	exports.shootup = shootup;
@@ -627,21 +635,9 @@
 	    bigslowdx: .5,
 	    bigslowdy: 1,
 	    bigslowradius: 15,
-	    bigslowcolor: 'green',
+	    bigslowcolor: 'black',
 	
-	    bigslowx2: 50,
-	    bigslowy2: 40,
-	    bigslowdx2: .5,
-	    bigslowdy2: 10,
-	    bigslowradius2: 15,
-	    bigslowcolor2: 'blue',
-	
-	    bigslowx3: 5,
-	    bigslowy3: 40,
-	    bigslowdx3: .5,
-	    bigslowdy3: 20,
-	    bigslowradius3: 15,
-	    bigslowcolor3: 'red'
+	    bigslowcolor3: 'white'
 	
 	};
 
@@ -654,7 +650,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.BigBlue3 = exports.BigBlue2 = exports.BigBlue = exports.LittleRed = undefined;
+	exports.BigBlue = exports.LittleRed = undefined;
 	
 	var _classCallCheck2 = __webpack_require__(2);
 	
@@ -731,137 +727,35 @@
 	  (0, _createClass3.default)(BigBlue, [{
 	    key: 'draw',
 	    value: function draw() {
-	      var canvas = document.getElementById('fg');
-	      var ctx = canvas.getContext('2d');
+	      var canvas2 = document.getElementById('fg1');
+	      var ctx2 = canvas2.getContext('2d');
 	
-	      ctx.fillStyle = this.color;
-	      ctx.beginPath();
-	      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-	      ctx.closePath();
-	      ctx.fill();
+	      ctx2.fillStyle = this.color;
+	      ctx2.beginPath();
+	      ctx2.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+	      ctx2.closePath();
+	      ctx2.fill();
 	    }
 	  }, {
 	    key: 'update',
 	    value: function update() {
 	
-	      var canvas = document.getElementById('fg');
+	      var canvas2 = document.getElementById('fg1');
 	      this.x += this.dx;
 	      this.y += this.dy;
 	      this.radius = this.radius * .99;
 	
-	      if (this.y > canvas.height || this.y < 0) {
+	      if (this.y > canvas2.height || this.y < 0) {
 	
 	        this.dy = -this.dy;
 	      }
-	      if (this.x > canvas.width || this.x < 0) {
+	      if (this.x > canvas2.width || this.x < 0) {
 	
 	        this.dx = -this.dx;
 	      }
 	    }
 	  }]);
 	  return BigBlue;
-	}();
-	
-	var BigBlue2 = exports.BigBlue2 = function () {
-	  function BigBlue2(x, y, dx, dy, radius, color) {
-	    (0, _classCallCheck3.default)(this, BigBlue2);
-	
-	
-	    this.x = x;
-	    this.y = y;
-	    this.dx = dx;
-	    this.dy = dy;
-	    this.radius = radius;
-	    this.color = color;
-	  }
-	
-	  (0, _createClass3.default)(BigBlue2, [{
-	    key: 'draw',
-	    value: function draw() {
-	
-	      var canvas = document.getElementById('bg');
-	      var ctx = canvas.getContext('2d');
-	
-	      ctx.clearRect(0, 0, canvas.width, canvas.height);
-	
-	      ctx.fillStyle = this.color;
-	      ctx.beginPath();
-	      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-	      ctx.closePath();
-	      ctx.fill();
-	    }
-	  }, {
-	    key: 'update',
-	    value: function update() {
-	
-	      var canvas = document.getElementById('bg');
-	      this.x += this.dx;
-	      this.y += this.dy;
-	      this.dx = this.dx * .99;
-	      this.dy = this.dy * .99;
-	
-	      if (this.y > canvas.height || this.y < 0) {
-	
-	        this.dy = -this.dy;
-	      }
-	      if (this.x > canvas.width || this.x < 0) {
-	
-	        this.dx = -this.dx;
-	      }
-	    }
-	  }]);
-	  return BigBlue2;
-	}();
-	
-	var BigBlue3 = exports.BigBlue3 = function () {
-	  function BigBlue3(x, y, dx, dy, radius, color) {
-	    (0, _classCallCheck3.default)(this, BigBlue3);
-	
-	
-	    this.x = x;
-	    this.y = y;
-	    this.dx = dx;
-	    this.dy = dy;
-	    this.radius = radius;
-	    this.color = color;
-	  }
-	
-	  (0, _createClass3.default)(BigBlue3, [{
-	    key: 'draw',
-	    value: function draw() {
-	
-	      var canvas = document.getElementById('bg');
-	      var ctx = canvas.getContext('2d');
-	
-	      ctx.clearRect(0, 0, canvas.width, canvas.height);
-	
-	      ctx.fillStyle = this.color;
-	      ctx.beginPath();
-	      ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
-	      ctx.closePath();
-	      ctx.fill();
-	    }
-	  }, {
-	    key: 'update',
-	    value: function update() {
-	
-	      var canvas = document.getElementById('bg');
-	      this.x += this.dx;
-	      this.y += this.dy;
-	      this.dx = this.dx * .99;
-	      this.dy = this.dy * .99;
-	
-	      if (this.y > canvas.height || this.y < 0) {
-	
-	        this.dy = -this.dy;
-	      }
-	      if (this.x > canvas.width || this.x < 0) {
-	
-	        this.dx = -this.dx;
-	      }
-	    }
-	  }]);
-	  return BigBlue3;
 	}();
 
 /***/ })

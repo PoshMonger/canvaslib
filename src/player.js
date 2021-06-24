@@ -1,6 +1,6 @@
 
 import options from './options';
-import {LittleRed,BigBlue,BigBlue2,BigBlue3} from './shape';
+import {LittleRed,BigBlue} from './shape';
 
 
 
@@ -16,25 +16,25 @@ let player1 = new LittleRed(options.bigslowx,
         options.bigslowdx,
         options.bigslowdy,
         options.bigslowradius,
-        options.bigslowcolor,);
+        options.bigslowcolor3,);
         let shootdown = new BigBlue(options.bigslowx,
             options.bigslowy,
             options.bigslowdx,
             options.bigslowdy,
             options.bigslowradius,
-            options.bigslowcolor,);
+            options.bigslowcolor3,);
             let shootleft = new BigBlue(options.bigslowx,
                 options.bigslowy,
                 options.bigslowdx,
                 options.bigslowdy,
                 options.bigslowradius,
-                options.bigslowcolor,);
+                options.bigslowcolor3,);
                 let shootright = new BigBlue(options.bigslowx,
                     options.bigslowy,
                     options.bigslowdx,
                     options.bigslowdy,
                     options.bigslowradius,
-                    options.bigslowcolor,);
+                    options.bigslowcolor3,);
 
 
 
