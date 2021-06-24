@@ -2,9 +2,8 @@
 import {getcords,player1,} from './controls';
 import { shootdown, shootup, shootleft,shootright} from './player';
 
-    
-getcords();
-
+    getcords()
+ 
 function animate(){
     
    
@@ -38,4 +37,3 @@ function animatefg(){
 
 }
 animatefg()
-

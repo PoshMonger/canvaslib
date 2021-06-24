@@ -79,7 +79,9 @@ export class BigBlue{
       let canvas2 = document.getElementById('fg1');
         this.x += this.dx;
         this.y +=this.dy;
-        this.radius = this.radius*.99;
+        this.radius = this.radius*.999;
+        this.dx =this.dx *.99;
+        this.dy = this.dy *.99;
 
 
         if (this.y > canvas2.height|| this.y < 0){

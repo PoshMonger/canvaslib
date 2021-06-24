@@ -4,16 +4,17 @@
         bigslowy:100,
         bigslowdx:.5,
         bigslowdy:1,
-        bigslowradius:15,
-        bigslowcolor:'black',
+        bigslowradius:12,
+        bigslowcolor:'grey',
         
         
         
         
         bigslowcolor3:'white',
+bigslowradius2:5,
 
-
-        
+        updownradius: 10,
+        leftrighradius:8,
 
 
     }

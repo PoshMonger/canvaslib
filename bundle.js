@@ -161,42 +161,75 @@
 	            case 65:
 	                //a
 	                _player.player1.dx--;
-	                _player.shootleft.dx--;
-	                _player.shootright.dx--;
-	                _player.shootdown.dx--;
-	                _player.shootup.dx--;
+	
 	                break;
 	            case 87:
 	                //w
 	                _player.player1.dy--;
-	                _player.shootup.dx--;
-	                _player.shootdown.dx--;
-	                _player.shootright.dx--;
-	                _player.shootleft.dx--;
+	
 	                break;
 	            case 68:
 	                //d
 	                _player.player1.dx++;
-	                _player.shootright.dx++;
-	                _player.shootdown.dx++;
-	                _player.shootleft.dx++;
-	                _player.shootup.dx++;
 	
 	                break;
 	            case 83:
 	                //s
 	                _player.player1.dy++;
-	                _player.shootdown.dy++;
-	                _player.shootup.dy++;
-	                _player.shootleft.dy++;
-	                _player.shootright.dy++;
 	
+	                break;
+	            case 49:
+	                var animatefg2 = function animatefg2() {
+	
+	                    _player.shootleft.x = _player.player1.x - 20;
+	                    _player.shootleft.y = _player.player1.y;
+	                    _player.shootleft.dx = _player.player1.dx;
+	                    _player.shootleft.dy = _player.player1.dy;
+	                    _player.shootright.x = _player.player1.x + 20;
+	                    _player.shootright.y = _player.player1.y;
+	                    _player.shootright.dx = _player.player1.dx;
+	                    _player.shootright.dy = _player.player1.dy;
+	                    _player.shootdown.x = _player.player1.x;
+	                    _player.shootdown.y = _player.player1.y + 20;
+	                    _player.shootdown.dx = _player.player1.dx;
+	                    _player.shootdown.dy = _player.player1.dy;
+	                    _player.shootup.x = _player.player1.x;
+	                    _player.shootup.y = _player.player1.y - 20;
+	                    _player.shootup.dx = _player.player1.dx;
+	                    _player.shootup.dy = _player.player1.dy;
+	                    _player.shootup.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+	                    _player.shootdown.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+	                    _player.shootright.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+	                    _player.shootleft.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+	                };
+	
+	                animatefg2();
+	                break;
+	
+	            case 50:
+	                var animatefg1 = function animatefg1() {
+	
+	                    _player.shootleft.dx = -_player.shootleft.dx;
+	                    _player.shootleft.dy = -_player.shootleft.dy;
+	                    _player.shootright.dx = -_player.shootright.dx;
+	                    _player.shootright.dy = -_player.shootright.dy;
+	                    _player.shootdown.dx = -_player.shootdown.dx;
+	                    _player.shootdown.dy = -_player.shootdown.dy;
+	                    _player.shootup.dx = -_player.shootup.dx;
+	                    _player.shootup.dy = -_player.shootup.dy;
+	                    _player.shootup.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+	                    _player.shootdown.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+	                    _player.shootright.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+	                    _player.shootleft.color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+	                };
+	
+	                animatefg1();
 	                break;
 	
 	            case 32:
 	                var animatefg1 = function animatefg1() {
 	
-	                    var myparticle = new Supersaiyan(_player.player1.x, _player.player1.y, _player.player1.dx, _player.player1.dy, 15, 'red');
+	                    var myparticle = new Supersaiyan(_player.player1.x, _player.player1.y, _player.player1.dx, _player.player1.dy, 15, 'pink');
 	
 	                    myparticle.draw();
 	                    myparticle.update();
@@ -213,34 +246,33 @@
 	                _player.shootleft.y = _player.player1.y;
 	                _player.shootleft.dx = -5;
 	                _player.shootleft.dy = 0;
-	                _player.shootleft.radius = 5;
-	                _player.shootleft.color = 'red';
+	                _player.shootleft.radius = 8;
 	
 	                break;
 	            case 38:
 	
-	                _player.shootdown.x = _player.player1.x;
-	                _player.shootdown.y = _player.player1.y;
-	                _player.shootdown.dx = 0;
-	                _player.shootdown.dy = -5;
-	                _player.shootdown.radius = 5;
-	                _player.shootdown.color = 'red';
+	                _player.shootup.x = _player.player1.x;
+	                _player.shootup.y = _player.player1.y;
+	                _player.shootup.dx = 0;
+	                _player.shootup.dy = -5;
+	                _player.shootup.radius = 8;
+	
 	                break;
 	            case 39:
 	                _player.shootright.x = _player.player1.x;
 	                _player.shootright.y = _player.player1.y;
 	                _player.shootright.dx = 5;
 	                _player.shootright.dy = 0;
-	                _player.shootright.radius = 5;
-	                _player.shootright.color = 'red';
+	                _player.shootright.radius = 8;
+	
 	                break;
 	            case 40:
-	                _player.shootup.x = _player.player1.x;
-	                _player.shootup.y = _player.player1.y;
-	                _player.shootup.dx = 0;
-	                _player.shootup.dy = 5;
-	                _player.shootup.radius = 5;
-	                _player.shootup.color = 'red';
+	                _player.shootdown.x = _player.player1.x;
+	                _player.shootdown.y = _player.player1.y;
+	                _player.shootdown.dx = 0;
+	                _player.shootdown.dy = 5;
+	                _player.shootdown.radius = 8;
+	
 	                break;
 	
 	        }
@@ -609,10 +641,10 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var player1 = new _shape.LittleRed(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor);
-	var shootup = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor3);
-	var shootdown = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor3);
-	var shootleft = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor3);
-	var shootright = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius, _options2.default.bigslowcolor3);
+	var shootup = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius2, _options2.default.bigslowcolor3);
+	var shootdown = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius2, _options2.default.bigslowcolor3);
+	var shootleft = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius2, _options2.default.bigslowcolor3);
+	var shootright = new _shape.BigBlue(_options2.default.bigslowx, _options2.default.bigslowy, _options2.default.bigslowdx, _options2.default.bigslowdy, _options2.default.bigslowradius2, _options2.default.bigslowcolor3);
 	
 	exports.player1 = player1;
 	exports.shootup = shootup;
@@ -634,10 +666,14 @@
 	    bigslowy: 100,
 	    bigslowdx: .5,
 	    bigslowdy: 1,
-	    bigslowradius: 15,
-	    bigslowcolor: 'black',
+	    bigslowradius: 12,
+	    bigslowcolor: 'grey',
 	
-	    bigslowcolor3: 'white'
+	    bigslowcolor3: 'white',
+	    bigslowradius2: 5,
+	
+	    updownradius: 10,
+	    leftrighradius: 8
 	
 	};
 
@@ -743,7 +779,9 @@
 	      var canvas2 = document.getElementById('fg1');
 	      this.x += this.dx;
 	      this.y += this.dy;
-	      this.radius = this.radius * .99;
+	      this.radius = this.radius * .999;
+	      this.dx = this.dx * .99;
+	      this.dy = this.dy * .99;
 	
 	      if (this.y > canvas2.height || this.y < 0) {
 	
